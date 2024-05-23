@@ -50,16 +50,6 @@ module.exports = function (eleventyConfig) {
     }
 
     /**
-     *  PASSTHROUGH'S
-     *      Copy/paste non-template files straight to /public, without any interference from the eleventy engine
-     *      https://www.11ty.dev/docs/copy/
-     */
-    eleventyConfig.addPassthroughCopy("./src/assets/favicons");
-    eleventyConfig.addPassthroughCopy("./src/assets/fonts");
-    eleventyConfig.addPassthroughCopy("./src/assets/images");
-    eleventyConfig.addPassthroughCopy("./src/assets/svgs");
-
-    /**
      *  EXTENSIONS
      *      Sets up non-template languages to be processed by eleventy, typically to allow other technologies process code at build.
      *      https://www.11ty.dev/docs/languages/custom/
@@ -70,6 +60,13 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addTemplateFormats("js");
     eleventyConfig.addExtension("js", configJs);
+
+    eleventyConfig.addPassthroughCopy("./src/assets/css");
+    eleventyConfig.addPassthroughCopy("./src/assets/favicons");
+    eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+    eleventyConfig.addPassthroughCopy("./src/assets/images");
+    eleventyConfig.addPassthroughCopy("./src/assets/js");
+    eleventyConfig.addPassthroughCopy("./src/assets/svgs");
 
     return {
         dir: {
