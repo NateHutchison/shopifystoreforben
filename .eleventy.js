@@ -53,8 +53,6 @@ module.exports = function (eleventyConfig) {
     };
 };
 // Plugin Imports
-const pluginDirectoryOutput = require("@11ty/eleventy-plugin-directory-output");
-const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginCritical = require("eleventy-critical-css");
