@@ -4,6 +4,13 @@ const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 
 // Filter Imports
 const filterFormatDate = require("./src/config/filters/formatDate");
+const pluginShopify = require("eleventy-plugin-shopify");
+
+// Config Imports
+const configShopify = require("./src/config/plugins/shopify");
+
+// Filter Imports
+const filterGetProductsInCollection = require("./src/config/filters/getProductsInCollection");
 
 module.exports = function (eleventyConfig) {
     /**
@@ -119,6 +126,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/assets/images");
     eleventyConfig.addPassthroughCopy("./src/assets/js");
     eleventyConfig.addPassthroughCopy("./src/assets/svgs");
+
+    eleventyConfig.addFilter("getProductsInCollection", filterGetProductsInCollection);
 
     return {
         dir: {
